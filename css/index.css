@@ -1,3 +1,13 @@
+@keyframes btnClick {
+  from {
+    background-color: #117a8b;
+    text-decoration: none;
+  }
+  to {
+    background-color: #212529;
+    text-decoration: underline;
+  }
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -168,6 +178,16 @@ img {
   width: 100%;
   margin: 0 auto;
 }
+@media (max-width: 500px) {
+  .container {
+    max-width: 90%;
+  }
+}
+@media (max-width: 830px) {
+  .container {
+    max-width: 90%;
+  }
+}
 header {
   width: 100%;
   height: 13vh;
@@ -180,11 +200,29 @@ header .container {
   align-items: center;
   height: 100%;
 }
+@media (max-width: 500px) {
+  header .container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 10px;
+  }
+}
 header .container nav {
   width: 40%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+@media (max-width: 500px) {
+  header .container nav {
+    width: 100%;
+  }
+}
+@media (max-width: 830px) {
+  header .container nav {
+    flex-grow: 1;
+    padding-left: 20px;
+  }
 }
 header .container nav a {
   color: #212529;
@@ -220,16 +258,62 @@ header .container nav a {
   width: 48%;
   padding-right: 1%;
 }
+@media (max-width: 500px) {
+  .home .content-section .text-content {
+    width: 100%;
+  }
+}
+@media (max-width: 830px) {
+  .home .content-section .text-content {
+    width: 100%;
+  }
+}
 .home .content-section .img-content {
   width: 48%;
   padding-left: 1%;
 }
+@media (max-width: 830px) {
+  .home .content-section .img-content {
+    width: 100%;
+    border-radius: 10px 10px;
+    height: 25vh;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+@media (max-width: 500px) {
+  .home .content-section .img-content {
+    width: 100%;
+    height: auto;
+    overflow: initial;
+  }
+}
 .home .content-section .img-content img {
   border-radius: 10px;
+}
+@media (max-width: 500px) {
+  .home .content-section .img-content img {
+    width: 100%;
+  }
+}
+@media (max-width: 830px) {
+  .home .content-section .img-content img {
+    width: 100%;
+  }
 }
 .home .inverse-content {
   border-bottom: 2px dashed #C0C0C0;
   padding-bottom: 30px;
+}
+@media (max-width: 500px) {
+  .home .inverse-content {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 830px) {
+  .home .inverse-content {
+    flex-direction: column-reverse;
+  }
 }
 .home .inverse-content .text-content {
   padding-left: 1%;
@@ -239,9 +323,35 @@ header .container nav a {
   padding-right: 1%;
   padding-left: 0;
 }
+@media (max-width: 830px) {
+  .home .inverse-content .img-content {
+    width: 100%;
+    border-radius: 10px 10px;
+    height: 25vh;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+@media (max-width: 500px) {
+  .home .inverse-content .img-content {
+    width: 100%;
+    height: auto;
+    overflow: initial;
+  }
+}
 .home .content-destination {
   width: 75%;
   margin: 0 auto 30px;
+}
+@media (max-width: 500px) {
+  .home .content-destination {
+    width: 100%;
+  }
+}
+@media (max-width: 830px) {
+  .home .content-destination {
+    width: 100%;
+  }
 }
 .home .content-destination img {
   border-radius: 10px;
@@ -252,9 +362,31 @@ header .container nav a {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .home .content-pick {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 830px) {
+  .home .content-pick {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .home .content-pick .destination {
   width: 30%;
   margin-bottom: 30px;
+}
+@media (max-width: 500px) {
+  .home .content-pick .destination {
+    width: 80%;
+  }
+}
+@media (max-width: 830px) {
+  .home .content-pick .destination {
+    width: 100%;
+  }
 }
 .home .content-pick .destination .btn {
   background-color: #117a8b;
@@ -263,4 +395,10 @@ header .container nav a {
   text-align: center;
   font-size: 1.6rem;
   border-radius: 10px;
+  cursor: pointer;
+}
+.home .content-pick .destination .btn:hover {
+  animation-name: btnClick;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }

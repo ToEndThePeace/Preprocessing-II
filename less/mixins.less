@@ -1,4 +1,20 @@
 // Mixins in here
+//Animation parametric mixin
+@keyframes btnClick {
+    from {
+        background-color: @button-bg;
+        text-decoration: none;
+    } to {
+        background-color: @shark;
+        text-decoration: underline;
+    }
+}
+.onClick(@sec) {
+    animation-name: btnClick;
+    animation-duration: @sec;
+    animation-fill-mode: forwards;
+}
+
 .botDash(@pad:15px) {
     border-bottom: 2px dashed @navigation-border;
     padding-bottom: @pad;
@@ -9,10 +25,23 @@
 }
 
 .btnStyle() {
-    background-color: darken(@button-bg, 10%);
+    background-color: @button-bg;
     color: @white;
     padding: 10px;
     text-align: center;
     font-size: 1.6rem;
     border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+        .onClick(2s);
+    }
+}
+
+.tabletImg() {
+    width: 100%;
+    padding: 0;
+    border-radius: 10px 10px;
+    height: 25vh;
+    overflow: hidden;
+    padding: 0;
 }
